@@ -16,7 +16,8 @@ In the config file, you can set the default group id ("member" by default) and t
 The permission group files follow this format:
 - Everything before the ".txt" in the file's name is the group's id. It is recommended to keep this short, lowercase, and have no spaces or special characters.
 - The first line of the file will be the permission group's display name, or how it'll show up in game, I'll get back to this later.
-- Every line after that is a different permission that permission group has. For example, to give members permission to use !help, you'd write "command.help" on a new line.
+- Every line after that is a different permission that permission group has. An asterisk "*" means all permissions, this is given to the host permission group by default.
+  - To give members permission to use !help, you'd write "command.help" on a new line.
 
 You are able to add as many permission groups as you want and give them any permissions you see fit.
 
