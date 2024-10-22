@@ -24,7 +24,7 @@ The permission group files follow this format:
 You are able to add as many permission groups as you want and give them any permissions you see fit.
 
 ## How do I assign a permission group to someone?
-You can modify the permission group id saved in the player's persistent client data file, or with ChatCommands, you can write "!setclientdata <player> PermissionGroup <permission group id>" to change it in game.
+You can modify the permission group id saved in the player's persistent client data file, or with ChatCommands, you can write "!setclientdata \<player> PermissionGroup \<permission group id>" to change it in game.
 
 ## So what about the display names?
 Using the [BetterChat](https://github.com/lammas321/CrabGameBetterChat) mod, you can add the player's permission group (or permission group id if you want) into their name when they send chat messages.
