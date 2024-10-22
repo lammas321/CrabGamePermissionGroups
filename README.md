@@ -28,4 +28,5 @@ You can modify the permission group id saved in the player's persistent client d
 
 ## So what about the display names?
 Using the [BetterChat](https://github.com/lammas321/CrabGameBetterChat) mod, you can add the player's permission group (or permission group id if you want) into their name when they send chat messages.
+
 When adding permission groups to the formatting, use PERMISSION_GROUP to use the permission group's display name, and PERMISSION_GROUP_ID to use it's id.
