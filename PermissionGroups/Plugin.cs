@@ -7,10 +7,10 @@ using System.IO;
 
 namespace PermissionGroups
 {
-    [BepInPlugin($"lammas123.{MyPluginInfo.PLUGIN_NAME}", MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
     [BepInDependency("lammas123.PersistentData")]
     [BepInDependency("lammas123.BetterChat", BepInDependency.DependencyFlags.SoftDependency)]
-    public class PermissionGroups : BasePlugin
+    public sealed class PermissionGroups : BasePlugin
     {
         internal static PermissionGroups Instance;
 
@@ -71,8 +71,10 @@ namespace PermissionGroups
                 BetterChatCompatibility.RegisterFormatting("PERMISSION_GROUP_ID", FormatPermissionGroupId);
             }
 
-            Harmony.CreateAndPatchAll(typeof(Patches));
-            Log.LogInfo($"Loaded [{MyPluginInfo.PLUGIN_NAME} {MyPluginInfo.PLUGIN_VERSION}]");
+            Harmony harmony = new(MyPluginInfo.PLUGIN_NAME);
+            harmony.PatchAll(typeof(Patches));
+
+            Log.LogInfo($"Initialized [{MyPluginInfo.PLUGIN_NAME} {MyPluginInfo.PLUGIN_VERSION}]");
         }
 
         internal static string FormatPermissionGroup(ulong clientId)

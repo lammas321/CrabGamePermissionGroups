@@ -9,7 +9,7 @@ namespace PermissionGroups
     public static class Api
     {
         public static string PermissionGroupsPath
-            => Path.Combine(Paths.ConfigPath, $"lammas123.{MyPluginInfo.PLUGIN_GUID}");
+            => Path.Combine(Paths.ConfigPath, MyPluginInfo.PLUGIN_GUID);
 
         internal static Dictionary<string, PermissionGroup> permissionGroups = [];
 
