@@ -11,7 +11,7 @@ namespace PermissionGroups
         [HarmonyPostfix]
         internal static void PostLobbyManagerStartLobby()
         {
-            PersistentData.ClientDataFile hostFile = PersistentData.Api.GetClientDataFile(Utility.ClientId);
+            PersistentData.ClientDataFile hostFile = PersistentData.Api.GetClientDataFile(SteamUser.GetSteamID().m_SteamID);
             hostFile.Set("PermissionGroup", Api.HostPermissionGroupId);
             hostFile.SaveFile();
         }
